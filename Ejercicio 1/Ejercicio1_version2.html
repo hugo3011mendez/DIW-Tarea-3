@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea 3 - Ejercicio 1 - Versión 2</title>
+
+    <link rel="stylesheet" href="estilosEj1.css"> <!-- Enlazo el archivo de estilos base para las dos versiones de este ejercicio -->
+    <style>
+        /* COMANDOS DE IMAGEMAGICK PARA REDIMENSIONAR LAS IMÁGENES Y ARMAR LA IMAGEN CONJUNTA DE SPRITES : */
+        /* magick convert firefox.png -resize 100x100! FirefoxSprite.png */
+        /* magick convert chrome.png -resize 100x100! ChromeSprite.png */
+        /* magick convert explorer.png -resize 100x100! ExplorerSprite.png */
+        /* magick convert safari.png -resize 100x100! SafariSprite.png */
+        /* magick convert opera.png -resize 100x100! OperaSprite.png */
+        /* magick convert *.png -append sprites.png */
+
+        /* Establezco la imagen de fondo de cada elemento usando la página http://www.spritecow.com/ */
+        #imagenChrome {
+            background: url('assets/sprites/sprites.png') no-repeat 0 0;
+            width: 100px;
+	        height: 100px;
+        }
+
+        #imagenExplorer {
+            background: url('assets/sprites/sprites.png') no-repeat 0 -100px;
+            width: 100px;
+	        height: 99px;        
+        }
+
+        #imagenFirefox {
+            background: url('assets/sprites/sprites.png') no-repeat 0 -200px;
+            width: 100px;
+            height: 100px;        
+        }
+
+        #imagenOpera {
+            background: url('assets/sprites/sprites.png') no-repeat -7px -304px;
+            width: 86px;
+	        height: 92px;
+        }
+
+        #imagenSafari {
+            background: url('assets/sprites/sprites.png') no-repeat 0 -400px;
+            width: 100px;
+            height: 100px;
+        }
+
+        .textos{ /* Alineo los textos con sus elementos correspondientes */
+            line-height: 70px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tarea 3 - Ejercicio 1 - Versión 2</h1>
+    <div id="container">
+        <div class="elementos" id="firefox">
+            <div id="imagenFirefox" class="imagenes"></div>
+        </div>
+        <p id="textoFirefox" class="textos">Firefox</p>        
+        
+        <div class="elementos" id="chrome">
+            <div id="imagenChrome" class="imagenes"></div>
+        </div>
+        <p id="textoChrome" class="textos">Chrome</p>
+
+        <div class="elementos" id="explorer">
+            <div id="imagenExplorer" class="imagenes"></div>
+        </div>
+        <p id="textoExplorer" class="textos">Explorer</p>
+
+        <div class="elementos" id="safari">
+            <div id="imagenSafari" class="imagenes"></div>
+        </div>
+        <p id="textoSafari" class="textos">Safari</p>
+
+        <div class="elementos" id="opera">
+            <div id="imagenOpera" class="imagenes"></div>
+        </div>
+        <p id="textoOpera" class="textos">Opera</p>
+    </div>
+</body>
+</html>

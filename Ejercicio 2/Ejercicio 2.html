@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea 3 - Ejercicio 2</title>
+    <link rel="stylesheet" href="style.css"> <!-- Enlazo el archivo de estilos -->
+</head>
+<body>
+    <header class="post-header"></header>
+</body>
+</html>
+
+
+<script>
+    window.onload = function loadStuff() {
+        var win, doc, img, header, enhancedClass;
+        // Si es un navegador viejo tipo IE 8, bye bye no tenemos nada que hacer aquí
+        if (!('addEventListener' in window)) {
+            return;
+        }
+
+        win = window;
+        doc = win.document;
+        img = new Image();
+        header = doc.querySelector('.post-header');
+        enhancedClass = 'post-header-enhanced'; // Clase HTML que vamos a aplicar cuando se cargue la imagen de alta calidad
+
+        // Buscamos la primera mención de una url para background-image incluso aunque el estilo no se haya aplicado todavía
+        var bigSrc = (function() {
+            // Busca todas las reglas CSS en la hoja de estilos
+            var styles = doc.querySelector('style').sheet.cssRules; // FIXME : Aquí da el error de que no puede leer propiedades de NULL
+            // Buscamos entre las reglas CSS la declaración de la imagen de fondo background-image
+            var bgDecl = (function() {
+            // ...usando una funcion en linea con un loop que recorre dichas reglas
+            var bgStyle, i, l = styles.length;
+            for (i = 0; i < l; i++) {
+                // ...y comprueba que se trata de la regla CSS que tiene como objetivo
+                // la clase mejorada o enhanced
+                if (styles[i].selectorText &&
+                styles[i].selectorText == '.' + enhancedClass) {
+                // Si coincide, entonces establecemos la variable bgDecl al valor de toda la background-image
+                // de esa regla CSS...
+                bgStyle = styles[i].style.backgroundImage;
+                // ...y rompemos el bucle
+                break;
+                }
+            }
+            // ...y devolvemos el texto.
+            return bgStyle;
+            }());
+            // Esto es mas complejo pero básicamente utiliza una expresion regular para "extraer" 
+            // la URL de la imagen de fondo de la cadena que acabamos de cargar (si la hemos encontrado vamos...)
+            return bgDecl && bgDecl.match(/(?:\(['|"]?)(.*?)(?:['|"]?\))/)[1];
+        }());
+
+        // Creamos una función que se ejecutará cuando se cargue la imagen grande
+        // y que cambiara la clase post-header por post-header-enhanced quedando asi
+        // aplicados los estilos nuevos
+        img.onload = function() {
+            header.className += ' ' + enhancedClass;
+        };
+        // Para terminar disparamos todo el proceso asignando al tag img la url del la imagen de alta calidad
+        if (bigSrc) {
+            img.src = bigSrc;
+        }
+    };
+</script>

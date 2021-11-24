@@ -1,0 +1,28 @@
+.post-header {
+    width: 20em;
+    height: 10em;
+    background-repeat: no-repeat;
+
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAQAAAAnOwc2AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQflCxgRBibxk4XMAAAAkElEQVQI103LPU7CABgA0NevP2hMSOlCOIBCWNxIuIK3ZOA0LmwmsLDgoANGgkChlYWB9SUv0Zp7V3oxNfOpbxMY68pcdEzkKlVq5MdR68lK6ltPnRraKp08WqKROgf2comLRu3BSQRqmUQDOv4kGRpxi4XwKu7xWc+XqXOG1tFBePNha2YQ/rV+7cBCYWF9BW2VLJgz+Y4UAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDIxLTExLTIzVDE1OjIzOjE3KzAwOjAwbrPzrgAAACV0RVh0ZGF0ZTptb2RpZnkAMjAyMS0xMS0yM1QxNToyMzoyNCswMDowMKCJVmwAAAAASUVORK5CYII=);
+    
+    transform: translateZ(0);
+}
+
+.post-header-enhanced {
+    width: 20em;
+    height: 10em;
+    background-repeat: no-repeat;
+
+    background-image: url(FotoAltaCalidad.png);
+
+    animation: sharpen .5s both;
+}
+
+@keyframes sharpen {
+    from {
+        background-image: filter(url(FotoAltaCalidad.png), blur(20px));
+    }
+    to {
+        background-image: filter(url(FotoAltaCalidad.png), blur(0px));
+    }
+}

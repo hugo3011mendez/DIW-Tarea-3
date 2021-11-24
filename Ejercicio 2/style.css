@@ -1,7 +1,9 @@
 .post-header {
+    /* Establezco un tamaño para el header */
     width: 20em;
     height: 10em;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; /* Especifico que la imagen no se repita */
+    background-size: cover; /* Y también especifico que la imagen cubra todo el contenedor */
 
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAQAAAAnOwc2AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQflCxgRBibxk4XMAAAAkElEQVQI103LPU7CABgA0NevP2hMSOlCOIBCWNxIuIK3ZOA0LmwmsLDgoANGgkChlYWB9SUv0Zp7V3oxNfOpbxMY68pcdEzkKlVq5MdR68lK6ltPnRraKp08WqKROgf2comLRu3BSQRqmUQDOv4kGRpxi4XwKu7xWc+XqXOG1tFBePNha2YQ/rV+7cBCYWF9BW2VLJgz+Y4UAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDIxLTExLTIzVDE1OjIzOjE3KzAwOjAwbrPzrgAAACV0RVh0ZGF0ZTptb2RpZnkAMjAyMS0xMS0yM1QxNToyMzoyNCswMDowMKCJVmwAAAAASUVORK5CYII=);
     
@@ -9,9 +11,11 @@
 }
 
 .post-header-enhanced {
+    /* Establezco un tamaño para el header */
     width: 20em;
     height: 10em;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; /* Especifico que la imagen no se repita */
+    background-size: cover; /* Y también especifico que la imagen cubra todo el contenedor */
 
     background-image: url(FotoAltaCalidad.png);
 

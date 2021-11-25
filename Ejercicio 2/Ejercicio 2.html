@@ -9,8 +9,8 @@
     <style>
         .post-header {
             /* Establezco un tamaño para el header */
-            width: 20em;
-            height: 10em;
+            width: 22em;
+            height: 4em;
             background-repeat: no-repeat; /* Especifico que la imagen no se repita */
             background-size: cover; /* Y también especifico que la imagen cubra todo el contenedor */
 
@@ -20,12 +20,6 @@
         }
 
         .post-header-enhanced {
-            /* Establezco un tamaño para el header */
-            width: 20em;
-            height: 10em;
-            background-repeat: no-repeat; /* Especifico que la imagen no se repita */
-            background-size: cover; /* Y también especifico que la imagen cubra todo el contenedor */
-
             background-image: url(FotoAltaCalidad.png);
 
             animation: sharpen .5s both;
@@ -48,7 +42,9 @@
 
 
 <script>
-    window.onload = function loadStuff() {
+    window.onload = setTimeout(loadStuff, 2000); // Ejecuto la función a la hora de cargarse la página, después de una espera de 2 segundos
+    
+    function loadStuff() {
         var win, doc, img, header, enhancedClass;
         // Si es un navegador viejo tipo IE 8, bye bye no tenemos nada que hacer aquí
         if (!('addEventListener' in window)) {
